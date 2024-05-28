@@ -6,6 +6,9 @@
 <body>
 <h1>User Page</h1>
 <p>Welcome, User!</p>
-<a href="/">Home</a>
+<a href="/">Home</a><br>
+<form th:action="@{/logout}" method="post">
+    <button type="submit">Logout</button>
+</form>
 </body>
 </html>

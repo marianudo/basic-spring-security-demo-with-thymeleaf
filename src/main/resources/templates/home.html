@@ -7,6 +7,9 @@
 <h1>Welcome to the Home Page</h1>
 <a href="/user">User Page</a><br>
 <a href="/admin">Admin Page</a><br>
-<a href="/login">Login</a>
+<a href="/login">Login</a><br>
+<form th:action="@{/logout}" method="post">
+    <button type="submit">Logout</button>
+</form>
 </body>
 </html>
