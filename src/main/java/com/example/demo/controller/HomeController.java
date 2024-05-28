@@ -1,6 +1,8 @@
 package com.example.demo.controller;
 
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -40,5 +42,11 @@ public class HomeController {
     @ResponseBody
     public String adminData() {
         return "Admin-specific data";
+    }
+
+    @GetMapping("/me")
+    @ResponseBody
+    public UserDetails getLoggedInUserProfile(@AuthenticationPrincipal UserDetails user) {
+        return user;
     }
 }
